@@ -152,7 +152,7 @@ It implications range from molecular investigations of the structural basis of i
 
 ## Hodgkin and Huxley simulator 
 
-<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html" data-preload>
+<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html" data-preview-link="true">
 </iframe>
 
 Some good simulators [Brian2](https://brian2.readthedocs.io/en/stable/), [NEURON](https://neuron.yale.edu/), [many others](https://compneuroweb.com/sftwr.html)
