@@ -152,9 +152,7 @@ It implications range from molecular investigations of the structural basis of i
 
 ## Hodgkin and Huxley simulator 
 
-Try this simulator: 
-
-http://myselph.de/hodgkinHuxley.html
+[Try this simulator](http://myselph.de/hodgkinHuxley.html)
 
 
 Set IRand to zero, tInjStop to 50, and IDC to 10  and  **investigate what is the effect on the neuron's threshold and spike morphology when changing**
