@@ -540,17 +540,14 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <p>The Hodgkin-Huxley model is the central pillar of modern neuroscience research. It implications range from molecular investigations of the structural basis of ionic channels to the basis of neural interfacing with technology.</p>
 </section><section id="hodgkin-and-huxley-simulator" class="slide level2">
 <h2>Hodgkin and Huxley simulator</h2>
-<p><a href="http://myselph.de/hodgkinHuxley.html">Try this simulator</a></p>
-<p>Set IRand to zero, tInjStop to 50, and IDC to 10 and <strong>investigate what is the effect on the neuron’s threshold and spike morphology when changing</strong></p>
+<p><strong><a href="http://myselph.de/hodgkinHuxley.html">Try this simulator</a></strong>. Set random current (IRand) to zero, current injection stop-time (tInjStop) to 50, current amplitude (IDC) to 10 and <strong>investigate what is the effect on the neuron’s threshold and spike morphology when changing</strong></p>
 <ul>
-<li>pulse duration</li>
-<li>pulse amplitude</li>
-<li>maximum sodium conductance (GNaMax)</li>
-<li>maximum potassium conductance (GKMax)</li>
-<li>maximum leak conductance (Gm)</li>
-<li>membrane capacitance (Cm)</li>
+<li>pulse parameters: duration, amplitude</li>
+<li>maximum conductances: sodium (GNaMax), potassium (GKMax), leak (Gm)</li>
+<li>reversal potentials: sodium (ENa) ,potassium (EK)</li>
 </ul>
-<p>Some good simulators <a href="https://brian2.readthedocs.io/en/stable/">Brian2</a>, <a href="https://neuron.yale.edu/">NEURON</a>, <a href="https://compneuroweb.com/sftwr.html">many others</a></p>
+<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html" data-preview-link="true">
+</iframe>
 </section></section>
 <section><section id="non-invasive-neural-interfaces" class="title-slide slide level1"><h1>Non-invasive Neural Interfaces</h1></section><section id="recording" class="slide level2">
 <h2>Recording</h2>
@@ -724,8 +721,9 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
 </video>
 </div>
 </div>
-</section><section id="further-reading" class="slide level2 unnumbered">
+</section><section id="further-reading" class="slide level2">
 <h2>Further reading</h2>
+<p>Some good simulators <a href="https://brian2.readthedocs.io/en/stable/">Brian2</a>, <a href="https://neuron.yale.edu/">NEURON</a>, <a href="https://compneuroweb.com/sftwr.html">many others</a></p>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-anumanchipalliSpeechSynthesisNeural2019">
 <p>Anumanchipalli, Gopala K., Josh Chartier, and Edward F. Chang. 2019. “Speech Synthesis from Neural Decoding of Spoken Sentences.” <em>Nature</em> 568 (7753): 493–98. <a href="https://doi.org/10.1038/s41586-019-1119-1">https://doi.org/10.1038/s41586-019-1119-1</a>.</p>
