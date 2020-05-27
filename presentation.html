@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jaime A. Undurraga" />
+  <meta name="dcterms.date" content="2020-05-27" />
+  <title>Interfacing the Neural Substrate with Technology</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal .slide-menu-button {
+      left: 105px !important;
+    }
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="presentation.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    
+    <link href="presentation_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="presentation_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Interfacing the Neural Substrate with Technology</h1>
+    <h2 class="author">Jaime A. Undurraga</h2>
+    <h3 class="date">2020-05-27</h3>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="neural-interfaces" class="slide level2">
+<h2>Neural interfaces</h2>
+<ul>
+<li><p>Advancements in electronics able to interfacing with the nervous system is a rapidly advancing. The implications of these technologies reach basic sciences and medical applications.</p></li>
+<li><p>Furthermore, neural interfaces can provide a direct, electrical bridge between the nervous systems and machines with the potential of transferring of information in one or both directions.</p></li>
+</ul>
+<center>
+<img data-src="my_figures/types_of_bci.png" style="width:80.0%" />
+</center>
+<center>
+From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Chaudhary, Birbaumer, and Ramos-Murguialday (2016)</span>
+</center>
+</section><section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li>1791 “De viribus electricitatis in motu muscolari. Commentarius” Galvani applied charges to the nerves of dead frogs’ muscles and observed contractions.</li>
+</ul>
+<center>
+<img data-src="my_figures/RanaBott.jpg" style="width:20.0%" />
+<center>
+<ul>
+<li><p>1949 voltage clamp technology -&gt; Hodgkin and Huxley to record currents carried by sodium and potassium ions through nerve cell membranes using electrochemical gradients.</p></li>
+<li><p>1952 <span class="citation" data-cites="hodgkinQuantitativeDescriptionMembrane1952">Hodgkin and Huxley (1952)</span> model mathematically describes the membrane potentials using a resistor–capacitor (RC) circuit model</p></li>
+<li><p>1957 André Djourno and Charles Eyriès original cochlear implant</p></li>
+<li><p>1961 William House cochlear first implants</p></li>
+<li><p>1978 First multiple channel CI was implanted into deaf volunteer</p></li>
+<li><p>1991 <a href="https://www.blackrockmicro.com/electrode-types/utah-array/">Utah</a> electrode array</p></li>
+<li><p>1997 Deep brain stimulation for Parkinson’s Disease</p></li>
+<li><p>2002 first retinal implant; closed-loop brain machine interfacing in monkeys</p></li>
+<li><p>2009 <a href="https://www.braingate.org">BrainGate2</a>: brain implant system built designed to help those affected by neurologic disease or injury.</p></li>
+<li><p>2013 Responsive Neurostimulation (RNS) for epilepsy <span class="citation" data-cites="thomasCriticalReviewResponsive2015">(Thomas and Jobst 2015)</span>.</p></li>
+<li><p>2019 <a href="https://www.neuralink.com/">Neuralink</a> 3,072 electrode array <span class="citation" data-cites="muskIntegratedBrainmachineInterface2019">(Musk and Neuralink 2019)</span></p></li>
+</ul>
+</section><section id="hodgkin-and-huxley-model" class="slide level2">
+<h2>Hodgkin and Huxley Model</h2>
+<div class="multiCol">
+<div class="col">
+<center>
+<span class="math inline">\(C_{m}\frac{dV}{dt} = I_{Na} + I_{K} + I_{leak} + I_{syn}\)</span>
+</center>
+<center>
+<span class="math inline">\(I_{Na} = \bar{g}_{Na} m^3 h \left(E_{Na} - V\right)\)</span>
+</center>
+<center>
+<span class="math inline">\(I_{K} = \bar{g}_{K} n^4 \left(E_{K} - V\right)\)</span>
+</center>
+<center>
+<span class="math inline">\(I_{leak} = \bar{g}_{leak} \left(E_{leak} - V\right)\)</span>
+</center>
+<center>
+<span class="math inline">\(I_{syn} = \sum_{i=1}^{n_{syn}} g_{syn_i} V\)</span>
+</center>
+</div>
+<div class="col">
+<video src="./my_figures/41592_2020_762_MOESM5_ESM.mp4" type="video/mp4" controls height="200" width="600" preload="auto">
+</video>
+</div>
+</div>
+<center>
+<img data-src="my_figures/hodgkin_huxley_model.svg" style="width:100.0%" />
+<center>
+<p>The Hodgkin-Huxley model is the central pillar of modern neuroscience research. It implications range from molecular investigations of the structural basis of ionic channels to the basis of neural interfacing with technology.</p>
+</section><section id="hodgkin-and-huxley-simulator" class="slide level2">
+<h2>Hodgkin and Huxley simulator</h2>
+<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html">
+</iframe>
+<p>Some good simulators <a href="https://brian2.readthedocs.io/en/stable/">Brian2</a>, <a href="https://neuron.yale.edu/">NEURON</a>, <a href="https://compneuroweb.com/sftwr.html">many others</a></p>
+</section></section>
+<section><section id="non-invasive-neural-interfaces" class="title-slide slide level1"><h1>Non-invasive Neural Interfaces</h1></section><section id="recording" class="slide level2">
+<h2>Recording</h2>
+<p>A neural interface builds a bidirectional communication channel between a subject’s nervous system and a man-made device Non-invasive methods measure the compound extracellular activity of hundreds of thousands.</p>
+<div class="multiCol">
+<div class="col">
+<p><img data-src="my_figures/non_invasive.png" style="width:100.0%" /></p>
+</div>
+<div class="col">
+<p><strong>Indirect</strong>:</p>
+<p>Blood oxygen level dependent response (BOLD): a proxy measure of neural activity</p>
+<ul>
+<li>Functional magnetic resonance imaging</li>
+<li>Near Infrared Spectroscopy</li>
+</ul>
+<p><strong>Direct:</strong></p>
+<ul>
+<li>Electroencephalogram (EEG)</li>
+<li>magnetoencephalography (MEG)</li>
+</ul>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>no require surgery is required</li>
+<li>easy to upgrade</li>
+</ul>
+<p><strong>Disadvantages</strong></p>
+<ul>
+<li>weak amplitude</li>
+<li>It may be difficult to achieve good contact between the sensor and the scalp (high impedance)</li>
+<li>Sensitive to endogenous contamination (movements, external noise)</li>
+<li>portability is an issue</li>
+</ul>
+</div>
+</div>
+</section><section id="stimulation" class="slide level2">
+<h2>Stimulation</h2>
+<div class="multiCol">
+<div class="col">
+<p><img data-src="my_figures/non_invasive_stim.png" style="width:100.0%" /></p>
+</div>
+<div class="col">
+<ul>
+<li>Transcranial current stimulation (TCS)</li>
+<li>Transcranial magnetic stimulation (TCS)</li>
+<li>Transcranial focused ultrasound (TFS)</li>
+<li>Transcranial photobiomodulation(tPBM)</li>
+</ul>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>No surgery required</li>
+</ul>
+<p><strong>Disadvantages</strong></p>
+<ul>
+<li>Poor spatial resolution and low control</li>
+<li>limited time</li>
+<li>portability is an issue</li>
+</ul>
+<p>Is there more?</p>
+</div>
+</div>
+</section></section>
+<section><section id="invasive-neural-interfaces" class="title-slide slide level1"><h1>Invasive Neural Interfaces</h1></section><section id="several-types-of-neural-interfaces" class="slide level2">
+<h2>Several types of neural interfaces</h2>
+<center>
+<img data-src="my_figures/implantable_electrodes.png" style="width:70.0%" />
+</center>
+<ul>
+<li>non-penetrating electrodes: Electrocorticography (ECoG), Flexible μECoG electrodes (spatial resolution <span class="math inline">\(\le\)</span> millimetre range)</li>
+<li>Penetrating electrodes</li>
+<li>optical electrodes</li>
+</ul>
+</section><section id="frequency-and-amplitude-resolution-of-differentt-neural-interfaces" class="slide level2">
+<h2>Frequency and amplitude resolution of differentt neural interfaces</h2>
+<div class='multiCol'>
+<div class="col">
+<p><img data-src="my_figures/electrode_type_resolution.png" style="width:100.0%" /></p>
+</div>
+<div class="col">
+<p><strong>Advantages</strong></p>
+<ul>
+<li>High spatial and temporal resolution</li>
+<li>Increased signal-to-noise ratio</li>
+<li>Possibility of stimulating and recording neural activity simultaneously</li>
+</ul>
+<p><strong>Disadvantages</strong></p>
+<ul>
+<li>Require surgery</li>
+<li>Damage of neural and vascular structures</li>
+<li>Risk that any head trauma may damage the device</li>
+</ul>
+</div>
+</section><section id="stimulation-1" class="slide level2">
+<h2>Stimulation</h2>
+<ul>
+<li>Biphasic stimulation is the most commonly use pulse shape</li>
+<li>Stimulation mode: Monopolar, biopolar, multipolar (several electrodes)</li>
+</ul>
+<div class="multiCol">
+<div class="col">
+<p><img data-src="my_figures/pulse_shapes_and_modes.png" style="width:100.0%" /> <img data-src="my_figures/el_discrimination_paradigm.svg" style="width:100.0%" /></p>
+</div>
+<div class="col">
+<p><br></p>
+<ul>
+<li>Several pulse shapes</li>
+<li>Several stimulation modes</li>
+<li>Several parameters (pulse width, rate, amplitude, polarity)</li>
+</ul>
+</div>
+</div>
+</section><section id="recording-1" class="slide level2">
+<h2>Recording</h2>
+<div class='multiCol'>
+
+<div class="col" style="width: 100%">
+<p><img data-src="my_figures/recording_spikes.png" style="width:100.0%" /></p>
+</div>
+<div class="col" style="width: 20%">
+<p><br></p>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>large amount of data (sampling rate &gt; 25 kHz)</li>
+<li>spike detection</li>
+<li>spike sorting (neural identification)</li>
+<li>real-time signal processing (on-chip neural signal processing and feature extraction; ASIC)</li>
+<li>power-consumption</li>
+<li>safety</li>
+<li>ethical concerns (see <span class="citation" data-cites="sobotImplantableTechnologyHistory2018">Sobot (2018)</span>, gilbertEffectsClosedLoopBrain2018)</li>
+</ul>
+</div>
+</section><section id="closed-loop" class="slide level2">
+<h2>Closed-loop</h2>
+<div class="multiCol">
+<div class="col">
+<p><strong>Neural signal feature extraction</strong></p>
+<ul>
+<li>neural energy in specified frequency bands</li>
+<li>action potential spikes,</li>
+<li>frequency-time transformations</li>
+<li>information theory</li>
+<li>neural networks</li>
+</ul>
+<p><strong>Hardware</strong> - integration of stimulating and recording front-end - electrical artifact reduction methods - signal processing</p>
+</div>
+<div class="col">
+<p><img data-src="my_figures/closed-loop.jpg" style="width:100.0%" /></p>
+</div>
+</div>
+</section><section id="applications" class="slide level2">
+<h2>Applications</h2>
+<div class="multiCol">
+<div class="col">
+<ul>
+<li>treatment of neurological disorders (epilepsy, Parkinson, depression)</li>
+<li>restoring <a href="https://www.youtube.com/embed/Vm0nZH9RahE">hearing</a></li>
+<li>control of <a href="https://www.youtube.com/embed/3RUlzAsM5dM">bionic limbs</a></li>
+<li>restoring <a href="https://www.youtube.com/embed/_Xl6rFvuR08">somatic sense</a></li>
+<li>health monitor (wearable EEG devices <a href="https://www.imec-int.com/en/eeg">IMEC</a>)</li>
+<li>mind-controlled devices (<a href="https://videopress.com/embed/u2U3eC3K">hearing aids</a>, wheelchairs)</li>
+<li>speech synthesis</li>
+</ul>
+</div>
+<div class="col">
+<center>
+<strong>Speech synthesis example</strong>
+</center>
+<center>
+From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019">Anumanchipalli, Chartier, and Chang (2019)</span>
+</center>
+<video src="./my_figures/41586_2019_1119_MOESM3_ESM.mp4" type="video/mp4" controls height="300" width="600" preload="auto">
+</video>
+</div>
+</div>
+</section><section id="further-reading" class="slide level2 unnumbered">
+<h2>Further reading</h2>
+<div id="refs" class="references" role="doc-bibliography">
+<div id="ref-anumanchipalliSpeechSynthesisNeural2019">
+<p>Anumanchipalli, Gopala K., Josh Chartier, and Edward F. Chang. 2019. “Speech Synthesis from Neural Decoding of Spoken Sentences.” <em>Nature</em> 568 (7753): 493–98. <a href="https://doi.org/10.1038/s41586-019-1119-1">https://doi.org/10.1038/s41586-019-1119-1</a>.</p>
+</div>
+<div id="ref-chaudharyBrainComputerInterfaces2016">
+<p>Chaudhary, Ujwal, Niels Birbaumer, and Ander Ramos-Murguialday. 2016. “Brain–Computer Interfaces for Communication and Rehabilitation.” <em>Nature Reviews Neurology</em> 12 (9): 513–25. <a href="https://doi.org/10.1038/nrneurol.2016.113">https://doi.org/10.1038/nrneurol.2016.113</a>.</p>
+</div>
+<div id="ref-hodgkinQuantitativeDescriptionMembrane1952">
+<p>Hodgkin, A. L., and A. F. Huxley. 1952. “A Quantitative Description of Membrane Current and Its Application to Conduction and Excitation in Nerve.” <em>J Physiol</em> 117 (4): 500–544. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/</a>.</p>
+</div>
+<div id="ref-muskIntegratedBrainmachineInterface2019">
+<p>Musk, Elon, and Neuralink. 2019. “An Integrated Brain-Machine Interface Platform with Thousands of Channels.” <em>bioRxiv</em>, August, 703801. <a href="https://doi.org/10.1101/703801">https://doi.org/10.1101/703801</a>.</p>
+</div>
+<div id="ref-sobotImplantableTechnologyHistory2018">
+<p>Sobot, Robert. 2018. “Implantable Technology : History, Controversies, and Social Implications [Commentary].” <em>IEEE Technology and Society Magazine</em> 37 (4): 35–45. <a href="https://doi.org/10.1109/MTS.2018.2880167">https://doi.org/10.1109/MTS.2018.2880167</a>.</p>
+</div>
+<div id="ref-thomasCriticalReviewResponsive2015">
+<p>Thomas, George P, and Barbara C Jobst. 2015. “Critical Review of the Responsive Neurostimulator System for Epilepsy.” <em>Med Devices (Auckl)</em> 8 (October): 405–11. <a href="https://doi.org/10.2147/MDER.S62853">https://doi.org/10.2147/MDER.S62853</a>.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="presentation_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="presentation_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+        menu: {
+          custom: false,
+          themes: false,
+          transitions: false
+        },
+
+
+
+        chalkboard: {
+          toggleNotesButton: true,
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'presentation_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'presentation_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'presentation_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+          { src: 'presentation_files/reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+<script>
+ Reveal.initialize({
+    // Optional reveal.js plugins
+    dependencies: [
+        { src: './reveal.js-plugins-master/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },	
+		{ src: './reveal.js-plugins-master/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+    ], 
+    audio: {
+		prefix: 'audio/', 	// audio files are stored in the "audio" folder
+		suffix: '.wav',		// audio files have the ".ogg" ending
+		textToSpeechURL: null,  // the URL to the text to speech converter
+		defaultNotes: false, 	// use slide notes as default for the text to speech converter
+		defaultText: false, 	// use slide text as default for the text to speech converter
+		advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance 
+		autoplay: false,	// automatically start slideshow
+		defaultDuration: 5,	// default duration in seconds if no audio is available 
+		playerOpacity: 0.05,	// opacity value of audio player if unfocused
+		playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls 
+		startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+	},
+});
+</script>
+
+  </body>
+</html>
