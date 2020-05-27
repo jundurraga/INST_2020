@@ -152,8 +152,21 @@ It implications range from molecular investigations of the structural basis of i
 
 ## Hodgkin and Huxley simulator 
 
-<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html" data-preview-link="true">
-</iframe>
+Try this simulator: 
+
+http://myselph.de/hodgkinHuxley.html
+
+
+Set IRand to zero, tInjStop to 50, and IDC to 10  and  **investigate what is the effect on the neuron's threshold and spike morphology when changing**
+
+
+- pulse duration
+- pulse amplitude
+- maximum sodium conductance (GNaMax)
+- maximum potassium conductance (GKMax)
+- maximum leak conductance (Gm)
+- membrane capacitance (Cm)
+
 
 Some good simulators [Brian2](https://brian2.readthedocs.io/en/stable/), [NEURON](https://neuron.yale.edu/), [many others](https://compneuroweb.com/sftwr.html)
 
