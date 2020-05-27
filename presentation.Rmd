@@ -31,7 +31,7 @@ library(qrcode)
 
 ## Before starting
 
-This presentation is optimized for Google Chrome and it can be found at
+This lecture is optimized for Google Chrome and it can be found at
 
 <center>
 https://jundurraga.github.io/INST_2020/#/
@@ -56,10 +56,10 @@ https://jundurraga.github.io/INST_2020/?print-pdf#/
 
 ## Neural interfaces
 
-- Advancements in electronics able to interfacing with the nervous system is a rapidly advancing.
+- Advancements in electronics able to interface with the nervous system is a rapidly advancing.
 The implications of these technologies reach basic sciences and medical applications.
 
-- Furthermore, neural interfaces can provide a direct, electrical bridge between the nervous systems and machines with the potential of transferring of information in one or both directions.
+- Furthermore, neural interfaces can provide a direct, electrical bridge between the nervous systems and machines with the potential of transferring information in one or both directions.
 
 
 
@@ -84,9 +84,9 @@ From @chaudharyBrainComputerInterfaces2016
 
 - 1952 @hodgkinQuantitativeDescriptionMembrane1952 model mathematically describes the membrane potentials using a resistor–capacitor (RC) circuit model
 
-- 1957 André Djourno and Charles Eyriès original cochlear implant
+- 1957 André Djourno and Charles Eyriès first human cochlear implant experiment
 
-- 1961 William House cochlear first implants 
+- 1961 William House first cochlear implantation
 
 - 1978 First multiple channel CI was implanted into deaf volunteer
 
@@ -156,7 +156,7 @@ It implications range from molecular investigations of the structural basis of i
 
 - pulse parameters:  duration, amplitude 
 - maximum conductances: sodium (GNaMax), potassium (GKMax), leak (Gm)
-- reversal potentials: sodium (ENa) ,potassium (EK)
+- reversal potentials: sodium (ENa), potassium (EK)
 
 <iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html" data-preview-link="true">
 </iframe>
@@ -164,10 +164,18 @@ It implications range from molecular investigations of the structural basis of i
 
 # Non-invasive Neural Interfaces
 
+## Types of neural interfaces
+
+![](./my_figures/non_invasive_types.png){width="100%"}
+- Functional Near Infrared Spectroscopy (fNIRS)
+- Functional magnetic resonance imaging (fMRI)
+- Magnetoencephalography (MEG)
+- Electroencephalogram (EEG)
+
 ## Recording
 
-A neural interface builds a bidirectional communication channel between a subject’s nervous system and a man-made device
-Non-invasive methods measure the compound extracellular activity of hundreds of thousands.
+A neural interface builds a bidirectional communication channel between a subject’s nervous system and a man-made device.
+Non-invasive methods measure the compound extracellular activity of hundreds of thousands neurons.
 
 
 <div class='multiCol'>
@@ -180,25 +188,25 @@ Non-invasive methods measure the compound extracellular activity of hundreds of 
 
 Blood oxygen level dependent response (BOLD): a proxy measure of neural activity
 
-- Functional magnetic resonance imaging
-- Near Infrared Spectroscopy
+- Functional magnetic resonance imaging (fMRI)
+- Functional Near Infrared Spectroscopy (fNIRS)
 
 **Direct:**
 
 - Electroencephalogram (EEG)
-- magnetoencephalography (MEG)
+- Magnetoencephalography (MEG)
 
 **Advantages** 
 
-- no require surgery is required
-- easy to upgrade
+- No surgery is required
+- Easy to upgrade
 
 **Disadvantages**
 
-- weak amplitude
+- Weak amplitude
 - It may be difficult to achieve good contact between the sensor and the scalp (high impedance)
 - Sensitive to endogenous contamination (movements, external noise)
-- portability is an issue
+- Portability is an issue
 
 </div>
 </div>
@@ -222,8 +230,8 @@ Blood oxygen level dependent response (BOLD): a proxy measure of neural activity
 **Disadvantages**
 
 - Poor spatial resolution and low control
-- limited time 
-- portability is an issue
+- Limited time 
+- Portability is an issue
 
 
 Is there more? 
@@ -236,36 +244,36 @@ Is there more?
 
 # Invasive Neural Interfaces 
 
-## Several types of neural interfaces
+## Types of neural interfaces
 
 <center>
 ![](./my_figures/implantable_electrodes.png){width="70%"}
 </center>
 
-- non-penetrating electrodes: Electrocorticography (ECoG), Flexible μECoG electrodes (spatial resolution $\le$ millimetre range)
+- Non-penetrating electrodes: Electrocorticography (ECoG), Flexible μECoG electrodes (spatial resolution $\le$ millimetre range)
 - Penetrating electrodes
-- optical electrodes
+- Optical electrodes
 
-
-## Frequency and amplitude resolution of differentt neural interfaces
+## Recording
 
 <div class='multiCol'>
-<div class='col'>
-![](./my_figures/electrode_type_resolution.png){width="100%"}
+
+<div class='col' style="width: 100%">
+![](./my_figures/recording_spikes.png){width="100%"}
 </div>
-<div class='col'>
 
-**Advantages**
+<div class='col' style="width: 20%">
+<br>
 
-- High spatial and temporal resolution 
-- Increased signal-to-noise ratio
-- Possibility of stimulating and recording neural activity simultaneously
+**Challenges**
 
-**Disadvantages**
-
-- Require surgery 
-- Damage of neural and vascular structures
-- Risk that any head trauma may damage the device
+- Large amount of data (sampling rate > 25 kHz)
+- Spike detection
+- Spike sorting (neural identification)
+- Real-time signal processing (on-chip neural signal processing and feature extraction;  ASIC)
+- Power-consumption 
+- Safety 
+- Ethical concerns (see @sobotImplantableTechnologyHistory2018, gilbertEffectsClosedLoopBrain2018)
 
 </div>
 
@@ -288,45 +296,51 @@ Is there more?
 </div>
 </div>
 
-## Recording
+
+# Invasive or non invasive?
+
+## Frequency and amplitude resolution of different neural interfaces
 
 <div class='multiCol'>
+<div class='col'>
+![](./my_figures/electrode_type_resolution.png){width="100%"}
+</div>
+<div class='col'>
 
-<div class='col' style="width: 100%">
-![](./my_figures/recording_spikes.png){width="100%"}
+**Advantages**
+
+- High spatial and temporal resolution 
+- Increased signal-to-noise ratio
+- Possibility of stimulating and recording neural activity simultaneously
+
+**Disadvantages**
+
+- Require surgery 
+- Damage of neural and vascular structures
+- Risk that any head trauma may damage the device
+
 </div>
 
-<div class='col' style="width: 20%">
-<br>
+# Closed-loop
 
-**Challenges**
-
-- large amount of data (sampling rate > 25 kHz)
-- spike detection
-- spike sorting (neural identification)
-- real-time signal processing (on-chip neural signal processing and feature extraction;  ASIC)
-- power-consumption 
-- safety 
-- ethical concerns (see @sobotImplantableTechnologyHistory2018, gilbertEffectsClosedLoopBrain2018)
-
-</div>
-
-## Closed-loop
+## Bridging the gap in two directions
 
 <div class='multiCol'>
 <div class='col'>
 **Neural signal feature extraction**
 
-- neural energy in specified frequency bands
-- action potential spikes, 
-- frequency-time transformations 
-- information theory 
-- neural networks
+- Neural energy in specified frequency bands
+- Action potential spikes, 
+- Frequency-time transformations 
+- Information theory 
+- Neural networks
 
 **Hardware**
-- integration of stimulating and recording front-end
-- electrical artifact reduction methods
-- signal processing
+
+- Integration of stimulating and recording front-end
+- Electrical artifact reduction methods
+- Signal processing
+
 </div>
 <div class='col'>
 ![](./my_figures/closed-loop.jpg){width="100%"}
@@ -337,13 +351,13 @@ Is there more?
 
 <div class='multiCol'>
 <div class='col'>
-- treatment of neurological disorders (epilepsy, Parkinson, depression)
-- restoring [hearing](https://www.youtube.com/embed/Vm0nZH9RahE)
-- control of [bionic limbs](https://www.youtube.com/embed/3RUlzAsM5dM)
-- restoring [somatic sense](https://www.youtube.com/embed/_Xl6rFvuR08)
-- health monitor (wearable EEG devices [IMEC](https://www.imec-int.com/en/eeg))
-- mind-controlled devices ([hearing aids](https://videopress.com/embed/u2U3eC3K), wheelchairs)
-- speech synthesis 
+- Treatment of neurological disorders (epilepsy, Parkinson, depression)
+- Restoring [hearing](https://www.youtube.com/embed/Vm0nZH9RahE)
+- Control of [bionic limbs](https://www.youtube.com/embed/3RUlzAsM5dM)
+- Restoring [somatic sense](https://www.youtube.com/embed/_Xl6rFvuR08)
+- Health monitor (wearable EEG devices [IMEC](https://www.imec-int.com/en/eeg))
+- Mind-controlled devices ([hearing aids](https://videopress.com/embed/u2U3eC3K), wheelchairs)
+- Speech synthesis 
 </div>
 <div class='col'>
 
