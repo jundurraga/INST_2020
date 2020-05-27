@@ -510,7 +510,7 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <li><p>2019 <a href="https://www.neuralink.com/">Neuralink</a> 3,072 electrode array <span class="citation" data-cites="muskIntegratedBrainmachineInterface2019">(Musk and Neuralink 2019)</span></p></li>
 </ul>
 </section><section id="hodgkin-and-huxley-model" class="slide level2">
-<h2>Hodgkin and Huxley Model</h2>
+<h2>Hodgkin and Huxley model</h2>
 <div class="multiCol">
 <div class="col">
 <center>
@@ -551,7 +551,13 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 </section></section>
 <section><section id="non-invasive-neural-interfaces" class="title-slide slide level1"><h1>Non-invasive Neural Interfaces</h1></section><section id="types-of-neural-interfaces" class="slide level2">
 <h2>Types of neural interfaces</h2>
-<p><img data-src="./my_figures/non_invasive_types.png" style="width:100.0%" /> - Functional Near Infrared Spectroscopy (fNIRS) - Functional magnetic resonance imaging (fMRI) - Magnetoencephalography (MEG) - Electroencephalogram (EEG)</p>
+<p><img data-src="./my_figures/non_invasive_types.png" style="width:100.0%" /></p>
+<ul>
+<li>Functional Near Infrared Spectroscopy (fNIRS)</li>
+<li>Functional magnetic resonance imaging (fMRI)</li>
+<li>Magnetoencephalography (MEG)</li>
+<li>Electroencephalogram (EEG)</li>
+</ul>
 </section><section id="recording" class="slide level2">
 <h2>Recording</h2>
 <p>A neural interface builds a bidirectional communication channel between a subject’s nervous system and a man-made device. Non-invasive methods measure the compound extracellular activity of hundreds of thousands neurons.</p>
@@ -631,15 +637,17 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 </div>
 <div class="col" style="width: 20%">
 <p><br></p>
-<p><strong>Challenges</strong></p>
+<p><strong>Advantages</strong></p>
 <ul>
-<li>Large amount of data (sampling rate &gt; 25 kHz)</li>
-<li>Spike detection</li>
-<li>Spike sorting (neural identification)</li>
-<li>Real-time signal processing (on-chip neural signal processing and feature extraction; ASIC)</li>
-<li>Power-consumption</li>
-<li>Safety</li>
-<li>Ethical concerns (see <span class="citation" data-cites="sobotImplantableTechnologyHistory2018">Sobot (2018)</span>, gilbertEffectsClosedLoopBrain2018)</li>
+<li>High spatial and temporal resolution</li>
+<li>Increased signal-to-noise ratio</li>
+<li>Possibility of stimulating and recording neural activity simultaneously</li>
+</ul>
+<p><strong>Disadvantages</strong></p>
+<ul>
+<li>Require surgery</li>
+<li>Damage of neural and vascular structures</li>
+<li>Risk that any head trauma may damage the device</li>
 </ul>
 </div>
 </section><section id="stimulation-1" class="slide level2">
@@ -662,31 +670,30 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 </div>
 </div>
 </section></section>
-<section><section id="invasive-or-non-invasive" class="title-slide slide level1"><h1>Invasive or non invasive?</h1></section><section id="frequency-and-amplitude-resolution-of-different-neural-interfaces" class="slide level2">
+<section><section id="invasive-vs.-non-invasive" class="title-slide slide level1"><h1>Invasive vs. non-invasive</h1></section><section id="frequency-and-amplitude-resolution-of-different-neural-interfaces" class="slide level2">
 <h2>Frequency and amplitude resolution of different neural interfaces</h2>
 <div class='multiCol'>
 <div class="col">
 <p><img data-src="./my_figures/electrode_type_resolution.png" style="width:100.0%" /></p>
 </div>
 <div class="col">
-<p><strong>Advantages</strong></p>
-<ul>
-<li>High spatial and temporal resolution</li>
-<li>Increased signal-to-noise ratio</li>
-<li>Possibility of stimulating and recording neural activity simultaneously</li>
-</ul>
-<p><strong>Disadvantages</strong></p>
-<ul>
-<li>Require surgery</li>
-<li>Damage of neural and vascular structures</li>
-<li>Risk that any head trauma may damage the device</li>
-</ul>
+
 </div>
 </section></section>
 <section><section id="closed-loop" class="title-slide slide level1"><h1>Closed-loop</h1></section><section id="bridging-the-gap-in-two-directions" class="slide level2">
 <h2>Bridging the gap in two directions</h2>
 <div class="multiCol">
 <div class="col">
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Large amount of data (sampling rate &gt; 25 kHz)</li>
+<li>Spike detection</li>
+<li>Spike sorting (neural identification)</li>
+<li>Real-time signal processing (on-chip neural signal processing and feature extraction; ASIC)</li>
+<li>Power-consumption</li>
+<li>Safety</li>
+<li>Ethical concerns (see <span class="citation" data-cites="sobotImplantableTechnologyHistory2018">Sobot (2018)</span>, <span class="citation" data-cites="gilbertEffectsClosedLoopBrain2018">Gilbert, O’brien, and Cook (2018)</span>)</li>
+</ul>
 <p><strong>Neural signal feature extraction</strong></p>
 <ul>
 <li>Neural energy in specified frequency bands</li>
@@ -740,6 +747,9 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
 </div>
 <div id="ref-chaudharyBrainComputerInterfaces2016">
 <p>Chaudhary, Ujwal, Niels Birbaumer, and Ander Ramos-Murguialday. 2016. “Brain–Computer Interfaces for Communication and Rehabilitation.” <em>Nature Reviews Neurology</em> 12 (9): 513–25. <a href="https://doi.org/10.1038/nrneurol.2016.113">https://doi.org/10.1038/nrneurol.2016.113</a>.</p>
+</div>
+<div id="ref-gilbertEffectsClosedLoopBrain2018">
+<p>Gilbert, Frederic, Terence O’brien, and Mark Cook. 2018. “The Effects of Closed-Loop Brain Implants on Autonomy and Deliberation: What Are the Risks of Being Kept in the Loop?” <em>Cambridge Quarterly of Healthcare Ethics</em> 27 (2): 316–25. <a href="https://doi.org/10.1017/S0963180117000640">https://doi.org/10.1017/S0963180117000640</a>.</p>
 </div>
 <div id="ref-hodgkinQuantitativeDescriptionMembrane1952">
 <p>Hodgkin, A. L., and A. F. Huxley. 1952. “A Quantitative Description of Membrane Current and Its Application to Conduction and Excitation in Nerve.” <em>J Physiol</em> 117 (4): 500–544. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/</a>.</p>

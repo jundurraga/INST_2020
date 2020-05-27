@@ -107,7 +107,7 @@ From @chaudharyBrainComputerInterfaces2016
 
 
 
-## Hodgkin and Huxley Model
+## Hodgkin and Huxley model
 
 <div class='multiCol'>
 <div class='col'>
@@ -167,6 +167,7 @@ It implications range from molecular investigations of the structural basis of i
 ## Types of neural interfaces
 
 ![](./my_figures/non_invasive_types.png){width="100%"}
+
 - Functional Near Infrared Spectroscopy (fNIRS)
 - Functional magnetic resonance imaging (fMRI)
 - Magnetoencephalography (MEG)
@@ -265,15 +266,17 @@ Is there more?
 <div class='col' style="width: 20%">
 <br>
 
-**Challenges**
+**Advantages**
 
-- Large amount of data (sampling rate > 25 kHz)
-- Spike detection
-- Spike sorting (neural identification)
-- Real-time signal processing (on-chip neural signal processing and feature extraction;  ASIC)
-- Power-consumption 
-- Safety 
-- Ethical concerns (see @sobotImplantableTechnologyHistory2018, gilbertEffectsClosedLoopBrain2018)
+- High spatial and temporal resolution 
+- Increased signal-to-noise ratio
+- Possibility of stimulating and recording neural activity simultaneously
+
+**Disadvantages**
+
+- Require surgery 
+- Damage of neural and vascular structures
+- Risk that any head trauma may damage the device
 
 </div>
 
@@ -297,7 +300,7 @@ Is there more?
 </div>
 
 
-# Invasive or non invasive?
+# Invasive vs. non-invasive
 
 ## Frequency and amplitude resolution of different neural interfaces
 
@@ -306,19 +309,6 @@ Is there more?
 ![](./my_figures/electrode_type_resolution.png){width="100%"}
 </div>
 <div class='col'>
-
-**Advantages**
-
-- High spatial and temporal resolution 
-- Increased signal-to-noise ratio
-- Possibility of stimulating and recording neural activity simultaneously
-
-**Disadvantages**
-
-- Require surgery 
-- Damage of neural and vascular structures
-- Risk that any head trauma may damage the device
-
 </div>
 
 # Closed-loop
@@ -327,6 +317,17 @@ Is there more?
 
 <div class='multiCol'>
 <div class='col'>
+
+**Challenges**
+
+- Large amount of data (sampling rate > 25 kHz)
+- Spike detection
+- Spike sorting (neural identification)
+- Real-time signal processing (on-chip neural signal processing and feature extraction;  ASIC)
+- Power-consumption 
+- Safety 
+- Ethical concerns (see @sobotImplantableTechnologyHistory2018, @gilbertEffectsClosedLoopBrain2018)
+
 **Neural signal feature extraction**
 
 - Neural energy in specified frequency bands
