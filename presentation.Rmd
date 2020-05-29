@@ -135,8 +135,11 @@ $I_{syn} = \sum_{i=1}^{n_{syn}} g_{syn_i} V$
 
 </div>
 <div class='col'>
-<video src="./my_figures/41592_2020_762_MOESM5_ESM.mp4" type="video/mp4" controls height="200" width="600" preload="auto">
+<video src="./my_figures/41592_2020_762_MOESM6_ESM.mp4" type="video/mp4" controls height="200" width="200" preload="auto">
 </video>
+<center>
+Glutamate transients 
+</center>
 
 </div>
 </div>
