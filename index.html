@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Jaime A. Undurraga" />
-  <meta name="dcterms.date" content="2020-05-27" />
+  <meta name="dcterms.date" content="2020-05-29" />
   <title>Interfacing the Neural Substrate with Technology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -459,12 +459,12 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
     <h1 class="title">Interfacing the Neural Substrate with Technology</h1>
     <h2 class="author">Jaime A. Undurraga</h2>
-    <h3 class="date">2020-05-27</h3>
+    <h3 class="date">2020-05-29</h3>
 </section>
 
 <section id="before-starting" class="slide level2">
 <h2>Before starting</h2>
-<p>This lecture is optimized for Google Chrome and it can be found at</p>
+<p>This lecture is optimized for <strong>Google Chrome</strong> and it can be found at</p>
 <center>
 <a href="https://jundurraga.github.io/INST_2020/#/" class="uri">https://jundurraga.github.io/INST_2020/#/</a>
 </center>
@@ -504,9 +504,10 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <li><p>1978 First multiple channel CI was implanted into deaf volunteer</p></li>
 <li><p>1991 <a href="https://www.blackrockmicro.com/electrode-types/utah-array/">Utah</a> electrode array</p></li>
 <li><p>1997 Deep brain stimulation for Parkinson’s Disease</p></li>
-<li><p>2002 first retinal implant; closed-loop brain machine interfacing in monkeys</p></li>
+<li><p>2002 closed-loop brain machine interfacing in monkeys</p></li>
 <li><p>2009 <a href="https://www.braingate.org">BrainGate2</a>: brain implant system built designed to help those affected by neurologic disease or injury.</p></li>
-<li><p>2013 Responsive Neurostimulation (RNS) for epilepsy <span class="citation" data-cites="thomasCriticalReviewResponsive2015">(Thomas and Jobst 2015)</span>.</p></li>
+<li><p>2013 Responsive Neurostimulation (RNS) for epilepsy <span class="citation" data-cites="thomasCriticalReviewResponsive2015">(Thomas and Jobst 2015)</span></p></li>
+<li><p>2013 FDA Approves First Retinal Implant (Argus II)</p></li>
 <li><p>2019 <a href="https://www.neuralink.com/">Neuralink</a> 3,072 electrode array <span class="citation" data-cites="muskIntegratedBrainmachineInterface2019">(Musk and Neuralink 2019)</span></p></li>
 </ul>
 </section><section id="hodgkin-and-huxley-model" class="slide level2">
@@ -567,12 +568,13 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 </div>
 <div class="col">
 <p><strong>Indirect</strong>:</p>
-<p>Blood oxygen level dependent response (BOLD): a proxy measure of neural activity</p>
+<p>Blood oxygen level dependent response (BOLD): a proxy measure of neural activity - <strong>neurovascular link</strong></p>
 <ul>
 <li>Functional magnetic resonance imaging (fMRI)</li>
 <li>Functional Near Infrared Spectroscopy (fNIRS)</li>
 </ul>
 <p><strong>Direct:</strong></p>
+<p>Electrical currents</p>
 <ul>
 <li>Electroencephalogram (EEG)</li>
 <li>Magnetoencephalography (MEG)</li>
@@ -648,6 +650,7 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <li>Require surgery</li>
 <li>Damage of neural and vascular structures</li>
 <li>Risk that any head trauma may damage the device</li>
+<li>Compatibility issues with other systems (e.g. MRI).</li>
 </ul>
 </div>
 </section><section id="stimulation-1" class="slide level2">
@@ -701,6 +704,8 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <li>Frequency-time transformations</li>
 <li>Information theory</li>
 <li>Neural networks</li>
+<li>Sparse coding</li>
+<li>Decoders/Encoders</li>
 </ul>
 <p><strong>Hardware</strong></p>
 <ul>
@@ -720,6 +725,7 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <ul>
 <li>Treatment of neurological disorders (epilepsy, Parkinson, depression)</li>
 <li>Restoring <a href="https://www.youtube.com/embed/Vm0nZH9RahE">hearing</a></li>
+<li>Restoring vision (retinal and visual cortex implants)</li>
 <li>Control of <a href="https://www.youtube.com/embed/3RUlzAsM5dM">bionic limbs</a></li>
 <li>Restoring <a href="https://www.youtube.com/embed/_Xl6rFvuR08">somatic sense</a></li>
 <li>Health monitor (wearable EEG devices <a href="https://www.imec-int.com/en/eeg">IMEC</a>)</li>
@@ -803,12 +809,21 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
           toggleNotesButton: true,
         },
 
+        spotlight: {
+        	useAsPointer: false,
+        	lockPointerInsideCanvas: false,
+        	presentingCursor: "crosshair",
+        	spotlightCursor: "crosshair",
+        },
+
         keyboard: {
           67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
           66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
           46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
            8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
           68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+          81: function() { RevealSpotlight.toggleSpotlight() },
+          80: function() { RevealSpotlight.togglePresentationMode() },
         },
 
         // Optional reveal.js plugins
@@ -817,6 +832,7 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
           { src: 'presentation_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
           { src: 'presentation_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
           { src: 'presentation_files/reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
+          { src: 'presentation_files/reveal.js-3.3.0.1/plugin/spotlight/spotlight.js', async: true },
         ]
       });
     </script>

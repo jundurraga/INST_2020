@@ -31,7 +31,7 @@ library(qrcode)
 
 ## Before starting
 
-This lecture is optimized for Google Chrome and it can be found at
+This lecture is optimized for **Google Chrome** and it can be found at
 
 <center>
 https://jundurraga.github.io/INST_2020/#/
@@ -92,14 +92,15 @@ From @chaudharyBrainComputerInterfaces2016
 
 - 1991 [Utah](https://www.blackrockmicro.com/electrode-types/utah-array/) electrode array
 
-
 - 1997 Deep brain stimulation for Parkinson’s Disease
 
-- 2002 first retinal implant; closed-loop brain machine interfacing in monkeys
+- 2002 closed-loop brain machine interfacing in monkeys
 
 - 2009 [BrainGate2](https://www.braingate.org): brain implant system built designed to help those affected by neurologic disease or injury.
 
-- 2013 Responsive Neurostimulation (RNS) for epilepsy [@thomasCriticalReviewResponsive2015].
+- 2013 Responsive Neurostimulation (RNS) for epilepsy [@thomasCriticalReviewResponsive2015]
+
+- 2013 FDA Approves First Retinal Implant (Argus II)
 
 - 2019 [Neuralink](https://www.neuralink.com/) 3,072 electrode array [@muskIntegratedBrainmachineInterface2019]
 
@@ -187,12 +188,14 @@ Non-invasive methods measure the compound extracellular activity of hundreds of 
 
 **Indirect**: 
 
-Blood oxygen level dependent response (BOLD): a proxy measure of neural activity
+Blood oxygen level dependent response (BOLD): a proxy measure of neural activity - **neurovascular link**
 
 - Functional magnetic resonance imaging (fMRI)
 - Functional Near Infrared Spectroscopy (fNIRS)
 
 **Direct:**
+
+Electrical currents
 
 - Electroencephalogram (EEG)
 - Magnetoencephalography (MEG)
@@ -277,6 +280,7 @@ Is there more?
 - Require surgery 
 - Damage of neural and vascular structures
 - Risk that any head trauma may damage the device
+- Compatibility issues with other systems (e.g. MRI).
 
 </div>
 
@@ -335,6 +339,8 @@ Is there more?
 - Frequency-time transformations 
 - Information theory 
 - Neural networks
+- Sparse coding
+- Decoders/Encoders
 
 **Hardware**
 
@@ -354,6 +360,7 @@ Is there more?
 <div class='col'>
 - Treatment of neurological disorders (epilepsy, Parkinson, depression)
 - Restoring [hearing](https://www.youtube.com/embed/Vm0nZH9RahE)
+- Restoring vision (retinal and visual cortex implants)
 - Control of [bionic limbs](https://www.youtube.com/embed/3RUlzAsM5dM)
 - Restoring [somatic sense](https://www.youtube.com/embed/_Xl6rFvuR08)
 - Health monitor (wearable EEG devices [IMEC](https://www.imec-int.com/en/eeg))
