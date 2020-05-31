@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Jaime A. Undurraga" />
-  <meta name="dcterms.date" content="2020-05-29" />
+  <meta name="dcterms.date" content="2020-05-31" />
   <title>Interfacing the Neural Substrate with Technology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -459,7 +459,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
     <h1 class="title">Interfacing the Neural Substrate with Technology</h1>
     <h2 class="author">Jaime A. Undurraga</h2>
-    <h3 class="date">2020-05-29</h3>
+    <h3 class="date">2020-05-31</h3>
 </section>
 
 <section id="before-starting" class="slide level2">
@@ -488,28 +488,23 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <center>
 From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Chaudhary, Birbaumer, and Ramos-Murguialday (2016)</span>
 </center>
-</section><section id="history" class="slide level2">
-<h2>History</h2>
-<ul>
-<li>1791 “De viribus electricitatis in motu muscolari. Commentarius” Galvani applied charges to the nerves of dead frogs’ muscles and observed contractions.</li>
-</ul>
-<center>
-<img data-src="./my_figures/RanaBott.jpg" style="width:20.0%" />
-<center>
-<ul>
-<li><p>1949 voltage clamp technology -&gt; Hodgkin and Huxley to record currents carried by sodium and potassium ions through nerve cell membranes using electrochemical gradients.</p></li>
-<li><p>1952 <span class="citation" data-cites="hodgkinQuantitativeDescriptionMembrane1952">Hodgkin and Huxley (1952)</span> model mathematically describes the membrane potentials using a resistor–capacitor (RC) circuit model</p></li>
-<li><p>1957 André Djourno and Charles Eyriès first human cochlear implant experiment</p></li>
-<li><p>1961 William House first cochlear implantation</p></li>
-<li><p>1978 First multiple channel CI was implanted into deaf volunteer</p></li>
-<li><p>1991 <a href="https://www.blackrockmicro.com/electrode-types/utah-array/">Utah</a> electrode array</p></li>
-<li><p>1997 Deep brain stimulation for Parkinson’s Disease</p></li>
-<li><p>2002 closed-loop brain machine interfacing in monkeys</p></li>
-<li><p>2009 <a href="https://www.braingate.org">BrainGate2</a>: brain implant system built designed to help those affected by neurologic disease or injury.</p></li>
-<li><p>2013 Responsive Neurostimulation (RNS) for epilepsy <span class="citation" data-cites="thomasCriticalReviewResponsive2015">(Thomas and Jobst 2015)</span></p></li>
-<li><p>2013 FDA Approves First Retinal Implant (Argus II)</p></li>
-<li><p>2019 <a href="https://www.neuralink.com/">Neuralink</a> 3,072 electrode array <span class="citation" data-cites="muskIntegratedBrainmachineInterface2019">(Musk and Neuralink 2019)</span></p></li>
-</ul>
+<!-- ## History -->
+<!-- - 1791 "De viribus electricitatis in motu muscolari. Commentarius" Galvani applied charges to the nerves of dead frogs’ muscles and observed contractions. -->
+<!-- <center> -->
+<!-- ![](./my_figures/RanaBott.jpg){width="20%"} -->
+<!-- <center> -->
+<!-- - 1949 voltage clamp technology -> Hodgkin and Huxley to record currents carried by sodium and potassium ions through nerve cell membranes using electrochemical gradients. -->
+<!-- - 1952 @hodgkinQuantitativeDescriptionMembrane1952 model mathematically describes the membrane potentials using a resistor–capacitor (RC) circuit model -->
+<!-- - 1957 André Djourno and Charles Eyriès first human cochlear implant experiment -->
+<!-- - 1961 William House first cochlear implantation -->
+<!-- - 1978 First multiple channel CI was implanted into deaf volunteer -->
+<!-- - 1991 [Utah](https://www.blackrockmicro.com/electrode-types/utah-array/) electrode array -->
+<!-- - 1997 Deep brain stimulation for Parkinson’s Disease -->
+<!-- - 2002 closed-loop brain machine interfacing in monkeys -->
+<!-- - 2009 [BrainGate2](https://www.braingate.org): brain implant system built designed to help those affected by neurologic disease or injury. -->
+<!-- - 2013 Responsive Neurostimulation (RNS) for epilepsy [@thomasCriticalReviewResponsive2015] -->
+<!-- - 2013 FDA Approves First Retinal Implant (Argus II) -->
+<!-- - 2019 [Neuralink](https://www.neuralink.com/) 3,072 electrode array [@muskIntegratedBrainmachineInterface2019] -->
 </section><section id="hodgkin-and-huxley-model" class="slide level2">
 <h2>Hodgkin and Huxley model</h2>
 <div class="multiCol">
@@ -607,7 +602,7 @@ Glutamate transients
 <li>Transcranial current stimulation (TCS)</li>
 <li>Transcranial magnetic stimulation (TCS)</li>
 <li>Transcranial focused ultrasound (TFS)</li>
-<li>Transcranial photobiomodulation(tPBM)</li>
+<li>Transcranial photobiomodulation (tPBM)</li>
 </ul>
 <p><strong>Advantages</strong></p>
 <ul>
@@ -660,31 +655,25 @@ Glutamate transients
 <h2>Stimulation</h2>
 <ul>
 <li>Biphasic stimulation is the most commonly use pulse shape</li>
-<li>Stimulation mode: Monopolar, biopolar, multipolar (several electrodes)</li>
 </ul>
-<div class="multiCol">
-<div class="col">
-<p><img data-src="./my_figures/pulse_shapes_and_modes.png" style="width:100.0%" /> <img data-src="./my_figures/el_discrimination_paradigm.svg" style="width:100.0%" /></p>
-</div>
-<div class="col">
+<center>
+<img data-src="./my_figures/el_discrimination_paradigm.svg" style="width:100.0%" />
+</center>
+<!-- ![](./my_figures/pulse_shapes_and_modes.png){width="100%"} -->
 <p><br></p>
 <ul>
 <li>Several pulse shapes</li>
-<li>Several stimulation modes</li>
+<li>Several stimulation modes (Monopolar, biopolar, multipolar)</li>
 <li>Several parameters (pulse width, rate, amplitude, polarity)</li>
 </ul>
-</div>
-</div>
-</section></section>
-<section><section id="invasive-vs.-non-invasive" class="title-slide slide level1"><h1>Invasive vs. non-invasive</h1></section><section id="frequency-and-amplitude-resolution-of-different-neural-interfaces" class="slide level2">
-<h2>Frequency and amplitude resolution of different neural interfaces</h2>
-<div class='multiCol'>
-<div class="col">
-<p><img data-src="./my_figures/electrode_type_resolution.png" style="width:100.0%" /></p>
-</div>
-<div class="col">
-
-</div>
+<!-- # Invasive vs. non-invasive -->
+<!-- ## Frequency and amplitude resolution of different neural interfaces -->
+<!-- <div class='multiCol'> -->
+<!-- <div class='col'> -->
+<!-- ![](./my_figures/electrode_type_resolution.png){width="100%"} -->
+<!-- </div> -->
+<!-- <div class='col'> -->
+<!-- </div> -->
 </section></section>
 <section><section id="closed-loop" class="title-slide slide level1"><h1>Closed-loop</h1></section><section id="bridging-the-gap-in-two-directions" class="slide level2">
 <h2>Bridging the gap in two directions</h2>
@@ -760,17 +749,8 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
 <div id="ref-gilbertEffectsClosedLoopBrain2018">
 <p>Gilbert, Frederic, Terence O’brien, and Mark Cook. 2018. “The Effects of Closed-Loop Brain Implants on Autonomy and Deliberation: What Are the Risks of Being Kept in the Loop?” <em>Cambridge Quarterly of Healthcare Ethics</em> 27 (2): 316–25. <a href="https://doi.org/10.1017/S0963180117000640">https://doi.org/10.1017/S0963180117000640</a>.</p>
 </div>
-<div id="ref-hodgkinQuantitativeDescriptionMembrane1952">
-<p>Hodgkin, A. L., and A. F. Huxley. 1952. “A Quantitative Description of Membrane Current and Its Application to Conduction and Excitation in Nerve.” <em>J Physiol</em> 117 (4): 500–544. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/</a>.</p>
-</div>
-<div id="ref-muskIntegratedBrainmachineInterface2019">
-<p>Musk, Elon, and Neuralink. 2019. “An Integrated Brain-Machine Interface Platform with Thousands of Channels.” <em>bioRxiv</em>, August, 703801. <a href="https://doi.org/10.1101/703801">https://doi.org/10.1101/703801</a>.</p>
-</div>
 <div id="ref-sobotImplantableTechnologyHistory2018">
 <p>Sobot, Robert. 2018. “Implantable Technology : History, Controversies, and Social Implications [Commentary].” <em>IEEE Technology and Society Magazine</em> 37 (4): 35–45. <a href="https://doi.org/10.1109/MTS.2018.2880167">https://doi.org/10.1109/MTS.2018.2880167</a>.</p>
-</div>
-<div id="ref-thomasCriticalReviewResponsive2015">
-<p>Thomas, George P, and Barbara C Jobst. 2015. “Critical Review of the Responsive Neurostimulator System for Epilepsy.” <em>Med Devices (Auckl)</em> 8 (October): 405–11. <a href="https://doi.org/10.2147/MDER.S62853">https://doi.org/10.2147/MDER.S62853</a>.</p>
 </div>
 </div>
 </section></section>

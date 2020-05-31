@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Jaime A. Undurraga" />
-  <meta name="dcterms.date" content="2020-05-27" />
+  <meta name="dcterms.date" content="2020-05-31" />
   <title>Interfacing the Neural Substrate with Technology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -459,17 +459,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
     <h1 class="title">Interfacing the Neural Substrate with Technology</h1>
     <h2 class="author">Jaime A. Undurraga</h2>
-    <h3 class="date">2020-05-27</h3>
+    <h3 class="date">2020-05-31</h3>
 </section>
 
 <section id="before-starting" class="slide level2">
 <h2>Before starting</h2>
-<p>This presentation is optimized for Google Chrome and it can be found at</p>
+<p>This lecture is optimized for <strong>Google Chrome</strong> and it can be found at</p>
 <center>
 <a href="https://jundurraga.github.io/INST_2020/#/" class="uri">https://jundurraga.github.io/INST_2020/#/</a>
 </center>
 <center>
-<img src="presentation_files/figure-revealjs/ipm-fr-1.png" width="576" />
+<img src="presentation_files/figure-revealjs/qr_code-1.png" width="576" />
 </center>
 <p>A printable version of this presentation can be obtained at</p>
 <center>
@@ -479,8 +479,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="neural-interfaces" class="slide level2">
 <h2>Neural interfaces</h2>
 <ul>
-<li><p>Advancements in electronics able to interfacing with the nervous system is a rapidly advancing. The implications of these technologies reach basic sciences and medical applications.</p></li>
-<li><p>Furthermore, neural interfaces can provide a direct, electrical bridge between the nervous systems and machines with the potential of transferring of information in one or both directions.</p></li>
+<li><p>Advancements in electronics able to interface with the nervous system is a rapidly advancing. The implications of these technologies reach basic sciences and medical applications.</p></li>
+<li><p>Furthermore, neural interfaces can provide a direct, electrical bridge between the nervous systems and machines with the potential of transferring information in one or both directions.</p></li>
 </ul>
 <center>
 <img data-src="my_figures/types_of_bci.png" style="width:80.0%" />
@@ -488,29 +488,25 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <center>
 From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Chaudhary, Birbaumer, and Ramos-Murguialday (2016)</span>
 </center>
-</section><section id="history" class="slide level2">
-<h2>History</h2>
-<ul>
-<li>1791 “De viribus electricitatis in motu muscolari. Commentarius” Galvani applied charges to the nerves of dead frogs’ muscles and observed contractions.</li>
-</ul>
-<center>
-<img data-src="my_figures/RanaBott.jpg" style="width:20.0%" />
-<center>
-<ul>
-<li><p>1949 voltage clamp technology -&gt; Hodgkin and Huxley to record currents carried by sodium and potassium ions through nerve cell membranes using electrochemical gradients.</p></li>
-<li><p>1952 <span class="citation" data-cites="hodgkinQuantitativeDescriptionMembrane1952">Hodgkin and Huxley (1952)</span> model mathematically describes the membrane potentials using a resistor–capacitor (RC) circuit model</p></li>
-<li><p>1957 André Djourno and Charles Eyriès original cochlear implant</p></li>
-<li><p>1961 William House cochlear first implants</p></li>
-<li><p>1978 First multiple channel CI was implanted into deaf volunteer</p></li>
-<li><p>1991 <a href="https://www.blackrockmicro.com/electrode-types/utah-array/">Utah</a> electrode array</p></li>
-<li><p>1997 Deep brain stimulation for Parkinson’s Disease</p></li>
-<li><p>2002 first retinal implant; closed-loop brain machine interfacing in monkeys</p></li>
-<li><p>2009 <a href="https://www.braingate.org">BrainGate2</a>: brain implant system built designed to help those affected by neurologic disease or injury.</p></li>
-<li><p>2013 Responsive Neurostimulation (RNS) for epilepsy <span class="citation" data-cites="thomasCriticalReviewResponsive2015">(Thomas and Jobst 2015)</span>.</p></li>
-<li><p>2019 <a href="https://www.neuralink.com/">Neuralink</a> 3,072 electrode array <span class="citation" data-cites="muskIntegratedBrainmachineInterface2019">(Musk and Neuralink 2019)</span></p></li>
-</ul>
+<!-- ## History -->
+<!-- - 1791 "De viribus electricitatis in motu muscolari. Commentarius" Galvani applied charges to the nerves of dead frogs’ muscles and observed contractions. -->
+<!-- <center> -->
+<!-- ![](./my_figures/RanaBott.jpg){width="20%"} -->
+<!-- <center> -->
+<!-- - 1949 voltage clamp technology -> Hodgkin and Huxley to record currents carried by sodium and potassium ions through nerve cell membranes using electrochemical gradients. -->
+<!-- - 1952 @hodgkinQuantitativeDescriptionMembrane1952 model mathematically describes the membrane potentials using a resistor–capacitor (RC) circuit model -->
+<!-- - 1957 André Djourno and Charles Eyriès first human cochlear implant experiment -->
+<!-- - 1961 William House first cochlear implantation -->
+<!-- - 1978 First multiple channel CI was implanted into deaf volunteer -->
+<!-- - 1991 [Utah](https://www.blackrockmicro.com/electrode-types/utah-array/) electrode array -->
+<!-- - 1997 Deep brain stimulation for Parkinson’s Disease -->
+<!-- - 2002 closed-loop brain machine interfacing in monkeys -->
+<!-- - 2009 [BrainGate2](https://www.braingate.org): brain implant system built designed to help those affected by neurologic disease or injury. -->
+<!-- - 2013 Responsive Neurostimulation (RNS) for epilepsy [@thomasCriticalReviewResponsive2015] -->
+<!-- - 2013 FDA Approves First Retinal Implant (Argus II) -->
+<!-- - 2019 [Neuralink](https://www.neuralink.com/) 3,072 electrode array [@muskIntegratedBrainmachineInterface2019] -->
 </section><section id="hodgkin-and-huxley-model" class="slide level2">
-<h2>Hodgkin and Huxley Model</h2>
+<h2>Hodgkin and Huxley model</h2>
 <div class="multiCol">
 <div class="col">
 <center>
@@ -530,8 +526,11 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 </center>
 </div>
 <div class="col">
-<video src="./my_figures/41592_2020_762_MOESM5_ESM.mp4" type="video/mp4" controls height="200" width="600" preload="auto">
+<video src="./my_figures/41592_2020_762_MOESM6_ESM.mp4" type="video/mp4" controls height="200" width="200" preload="auto">
 </video>
+<center>
+Glutamate transients
+</center>
 </div>
 </div>
 <center>
@@ -540,40 +539,55 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <p>The Hodgkin-Huxley model is the central pillar of modern neuroscience research. It implications range from molecular investigations of the structural basis of ionic channels to the basis of neural interfacing with technology.</p>
 </section><section id="hodgkin-and-huxley-simulator" class="slide level2">
 <h2>Hodgkin and Huxley simulator</h2>
-<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html">
+<p><strong><a href="http://myselph.de/hodgkinHuxley.html">Try this simulator</a></strong>. Set random current (IRand) to zero, current injection stop-time (tInjStop) to 50, current amplitude (IDC) to 10 and <strong>investigate what is the effect on the neuron’s threshold and spike morphology when changing</strong></p>
+<ul>
+<li>pulse parameters: duration, amplitude</li>
+<li>maximum conductances: sodium (GNaMax), potassium (GKMax), leak (Gm)</li>
+<li>reversal potentials: sodium (ENa), potassium (EK)</li>
+</ul>
+<iframe width="800" height="600" marginheight="0" marginwidth="0" src="http://myselph.de/hodgkinHuxley.html" data-preview-link="true">
 </iframe>
-<p>Some good simulators <a href="https://brian2.readthedocs.io/en/stable/">Brian2</a>, <a href="https://neuron.yale.edu/">NEURON</a>, <a href="https://compneuroweb.com/sftwr.html">many others</a></p>
 </section></section>
-<section><section id="non-invasive-neural-interfaces" class="title-slide slide level1"><h1>Non-invasive Neural Interfaces</h1></section><section id="recording" class="slide level2">
+<section><section id="non-invasive-neural-interfaces" class="title-slide slide level1"><h1>Non-invasive Neural Interfaces</h1></section><section id="types-of-neural-interfaces" class="slide level2">
+<h2>Types of neural interfaces</h2>
+<p><img data-src="my_figures/non_invasive_types.png" style="width:100.0%" /></p>
+<ul>
+<li>Functional Near Infrared Spectroscopy (fNIRS)</li>
+<li>Functional magnetic resonance imaging (fMRI)</li>
+<li>Magnetoencephalography (MEG)</li>
+<li>Electroencephalogram (EEG)</li>
+</ul>
+</section><section id="recording" class="slide level2">
 <h2>Recording</h2>
-<p>A neural interface builds a bidirectional communication channel between a subject’s nervous system and a man-made device Non-invasive methods measure the compound extracellular activity of hundreds of thousands.</p>
+<p>A neural interface builds a bidirectional communication channel between a subject’s nervous system and a man-made device. Non-invasive methods measure the compound extracellular activity of hundreds of thousands neurons.</p>
 <div class="multiCol">
 <div class="col">
 <p><img data-src="my_figures/non_invasive.png" style="width:100.0%" /></p>
 </div>
 <div class="col">
 <p><strong>Indirect</strong>:</p>
-<p>Blood oxygen level dependent response (BOLD): a proxy measure of neural activity</p>
+<p>Blood oxygen level dependent response (BOLD): a proxy measure of neural activity - <strong>neurovascular link</strong></p>
 <ul>
-<li>Functional magnetic resonance imaging</li>
-<li>Near Infrared Spectroscopy</li>
+<li>Functional magnetic resonance imaging (fMRI)</li>
+<li>Functional Near Infrared Spectroscopy (fNIRS)</li>
 </ul>
 <p><strong>Direct:</strong></p>
+<p>Electrical currents</p>
 <ul>
 <li>Electroencephalogram (EEG)</li>
-<li>magnetoencephalography (MEG)</li>
+<li>Magnetoencephalography (MEG)</li>
 </ul>
 <p><strong>Advantages</strong></p>
 <ul>
-<li>no require surgery is required</li>
-<li>easy to upgrade</li>
+<li>No surgery is required</li>
+<li>Easy to upgrade</li>
 </ul>
 <p><strong>Disadvantages</strong></p>
 <ul>
-<li>weak amplitude</li>
+<li>Weak amplitude</li>
 <li>It may be difficult to achieve good contact between the sensor and the scalp (high impedance)</li>
 <li>Sensitive to endogenous contamination (movements, external noise)</li>
-<li>portability is an issue</li>
+<li>Portability is an issue</li>
 </ul>
 </div>
 </div>
@@ -588,7 +602,7 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <li>Transcranial current stimulation (TCS)</li>
 <li>Transcranial magnetic stimulation (TCS)</li>
 <li>Transcranial focused ultrasound (TFS)</li>
-<li>Transcranial photobiomodulation(tPBM)</li>
+<li>Transcranial photobiomodulation (tPBM)</li>
 </ul>
 <p><strong>Advantages</strong></p>
 <ul>
@@ -597,30 +611,32 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <p><strong>Disadvantages</strong></p>
 <ul>
 <li>Poor spatial resolution and low control</li>
-<li>limited time</li>
-<li>portability is an issue</li>
+<li>Limited time</li>
+<li>Portability is an issue</li>
 </ul>
 <p>Is there more?</p>
 </div>
 </div>
 </section></section>
-<section><section id="invasive-neural-interfaces" class="title-slide slide level1"><h1>Invasive Neural Interfaces</h1></section><section id="several-types-of-neural-interfaces" class="slide level2">
-<h2>Several types of neural interfaces</h2>
+<section><section id="invasive-neural-interfaces" class="title-slide slide level1"><h1>Invasive Neural Interfaces</h1></section><section id="types-of-neural-interfaces-1" class="slide level2">
+<h2>Types of neural interfaces</h2>
 <center>
 <img data-src="my_figures/implantable_electrodes.png" style="width:70.0%" />
 </center>
 <ul>
-<li>non-penetrating electrodes: Electrocorticography (ECoG), Flexible μECoG electrodes (spatial resolution <span class="math inline">\(\le\)</span> millimetre range)</li>
+<li>Non-penetrating electrodes: Electrocorticography (ECoG), Flexible μECoG electrodes (spatial resolution <span class="math inline">\(\le\)</span> millimetre range)</li>
 <li>Penetrating electrodes</li>
-<li>optical electrodes</li>
+<li>Optical electrodes</li>
 </ul>
-</section><section id="frequency-and-amplitude-resolution-of-differentt-neural-interfaces" class="slide level2">
-<h2>Frequency and amplitude resolution of differentt neural interfaces</h2>
+</section><section id="recording-1" class="slide level2">
+<h2>Recording</h2>
 <div class='multiCol'>
-<div class="col">
-<p><img data-src="my_figures/electrode_type_resolution.png" style="width:100.0%" /></p>
+
+<div class="col" style="width: 100%">
+<p><img data-src="my_figures/recording_spikes.png" style="width:100.0%" /></p>
 </div>
-<div class="col">
+<div class="col" style="width: 20%">
+<p><br></p>
 <p><strong>Advantages</strong></p>
 <ul>
 <li>High spatial and temporal resolution</li>
@@ -632,60 +648,63 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <li>Require surgery</li>
 <li>Damage of neural and vascular structures</li>
 <li>Risk that any head trauma may damage the device</li>
+<li>Compatibility issues with other systems (e.g. MRI).</li>
 </ul>
 </div>
 </section><section id="stimulation-1" class="slide level2">
 <h2>Stimulation</h2>
 <ul>
 <li>Biphasic stimulation is the most commonly use pulse shape</li>
-<li>Stimulation mode: Monopolar, biopolar, multipolar (several electrodes)</li>
 </ul>
-<div class="multiCol">
-<div class="col">
-<p><img data-src="my_figures/pulse_shapes_and_modes.png" style="width:100.0%" /> <img data-src="my_figures/el_discrimination_paradigm.svg" style="width:100.0%" /></p>
-</div>
-<div class="col">
+<center>
+<img data-src="my_figures/el_discrimination_paradigm.svg" style="width:100.0%" />
+</center>
+<!-- ![](./my_figures/pulse_shapes_and_modes.png){width="100%"} -->
 <p><br></p>
 <ul>
 <li>Several pulse shapes</li>
-<li>Several stimulation modes</li>
+<li>Several stimulation modes (Monopolar, biopolar, multipolar)</li>
 <li>Several parameters (pulse width, rate, amplitude, polarity)</li>
 </ul>
-</div>
-</div>
-</section><section id="recording-1" class="slide level2">
-<h2>Recording</h2>
-<div class='multiCol'>
-
-<div class="col" style="width: 100%">
-<p><img data-src="my_figures/recording_spikes.png" style="width:100.0%" /></p>
-</div>
-<div class="col" style="width: 20%">
-<p><br></p>
-<p><strong>Challenges</strong></p>
-<ul>
-<li>large amount of data (sampling rate &gt; 25 kHz)</li>
-<li>spike detection</li>
-<li>spike sorting (neural identification)</li>
-<li>real-time signal processing (on-chip neural signal processing and feature extraction; ASIC)</li>
-<li>power-consumption</li>
-<li>safety</li>
-<li>ethical concerns (see <span class="citation" data-cites="sobotImplantableTechnologyHistory2018">Sobot (2018)</span>, gilbertEffectsClosedLoopBrain2018)</li>
-</ul>
-</div>
-</section><section id="closed-loop" class="slide level2">
-<h2>Closed-loop</h2>
+<!-- # Invasive vs. non-invasive -->
+<!-- ## Frequency and amplitude resolution of different neural interfaces -->
+<!-- <div class='multiCol'> -->
+<!-- <div class='col'> -->
+<!-- ![](./my_figures/electrode_type_resolution.png){width="100%"} -->
+<!-- </div> -->
+<!-- <div class='col'> -->
+<!-- </div> -->
+</section></section>
+<section><section id="closed-loop" class="title-slide slide level1"><h1>Closed-loop</h1></section><section id="bridging-the-gap-in-two-directions" class="slide level2">
+<h2>Bridging the gap in two directions</h2>
 <div class="multiCol">
 <div class="col">
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Large amount of data (sampling rate &gt; 25 kHz)</li>
+<li>Spike detection</li>
+<li>Spike sorting (neural identification)</li>
+<li>Real-time signal processing (on-chip neural signal processing and feature extraction; ASIC)</li>
+<li>Power-consumption</li>
+<li>Safety</li>
+<li>Ethical concerns (see <span class="citation" data-cites="sobotImplantableTechnologyHistory2018">Sobot (2018)</span>, <span class="citation" data-cites="gilbertEffectsClosedLoopBrain2018">Gilbert, O’brien, and Cook (2018)</span>)</li>
+</ul>
 <p><strong>Neural signal feature extraction</strong></p>
 <ul>
-<li>neural energy in specified frequency bands</li>
-<li>action potential spikes,</li>
-<li>frequency-time transformations</li>
-<li>information theory</li>
-<li>neural networks</li>
+<li>Neural energy in specified frequency bands</li>
+<li>Action potential spikes,</li>
+<li>Frequency-time transformations</li>
+<li>Information theory</li>
+<li>Neural networks</li>
+<li>Sparse coding</li>
+<li>Decoders/Encoders</li>
 </ul>
-<p><strong>Hardware</strong> - integration of stimulating and recording front-end - electrical artifact reduction methods - signal processing</p>
+<p><strong>Hardware</strong></p>
+<ul>
+<li>Integration of stimulating and recording front-end</li>
+<li>Electrical artifact reduction methods</li>
+<li>Signal processing</li>
+</ul>
 </div>
 <div class="col">
 <p><img data-src="my_figures/closed-loop.jpg" style="width:100.0%" /></p>
@@ -696,13 +715,14 @@ From <span class="citation" data-cites="chaudharyBrainComputerInterfaces2016">Ch
 <div class="multiCol">
 <div class="col">
 <ul>
-<li>treatment of neurological disorders (epilepsy, Parkinson, depression)</li>
-<li>restoring <a href="https://www.youtube.com/embed/Vm0nZH9RahE">hearing</a></li>
-<li>control of <a href="https://www.youtube.com/embed/3RUlzAsM5dM">bionic limbs</a></li>
-<li>restoring <a href="https://www.youtube.com/embed/_Xl6rFvuR08">somatic sense</a></li>
-<li>health monitor (wearable EEG devices <a href="https://www.imec-int.com/en/eeg">IMEC</a>)</li>
-<li>mind-controlled devices (<a href="https://videopress.com/embed/u2U3eC3K">hearing aids</a>, wheelchairs)</li>
-<li>speech synthesis</li>
+<li>Treatment of neurological disorders (epilepsy, Parkinson, depression)</li>
+<li>Restoring <a href="https://www.youtube.com/embed/Vm0nZH9RahE">hearing</a></li>
+<li>Restoring vision (retinal and visual cortex implants)</li>
+<li>Control of <a href="https://www.youtube.com/embed/3RUlzAsM5dM">bionic limbs</a></li>
+<li>Restoring <a href="https://www.youtube.com/embed/_Xl6rFvuR08">somatic sense</a></li>
+<li>Health monitor (wearable EEG devices <a href="https://www.imec-int.com/en/eeg">IMEC</a>)</li>
+<li>Mind-controlled devices (<a href="https://videopress.com/embed/u2U3eC3K">hearing aids</a>, wheelchairs)</li>
+<li>Speech synthesis</li>
 </ul>
 </div>
 <div class="col">
@@ -716,8 +736,9 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
 </video>
 </div>
 </div>
-</section><section id="further-reading" class="slide level2 unnumbered">
+</section><section id="further-reading" class="slide level2">
 <h2>Further reading</h2>
+<p>Some good simulators <a href="https://brian2.readthedocs.io/en/stable/">Brian2</a>, <a href="https://neuron.yale.edu/">NEURON</a>, <a href="https://compneuroweb.com/sftwr.html">many others</a></p>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-anumanchipalliSpeechSynthesisNeural2019">
 <p>Anumanchipalli, Gopala K., Josh Chartier, and Edward F. Chang. 2019. “Speech Synthesis from Neural Decoding of Spoken Sentences.” <em>Nature</em> 568 (7753): 493–98. <a href="https://doi.org/10.1038/s41586-019-1119-1">https://doi.org/10.1038/s41586-019-1119-1</a>.</p>
@@ -725,17 +746,11 @@ From <span class="citation" data-cites="anumanchipalliSpeechSynthesisNeural2019"
 <div id="ref-chaudharyBrainComputerInterfaces2016">
 <p>Chaudhary, Ujwal, Niels Birbaumer, and Ander Ramos-Murguialday. 2016. “Brain–Computer Interfaces for Communication and Rehabilitation.” <em>Nature Reviews Neurology</em> 12 (9): 513–25. <a href="https://doi.org/10.1038/nrneurol.2016.113">https://doi.org/10.1038/nrneurol.2016.113</a>.</p>
 </div>
-<div id="ref-hodgkinQuantitativeDescriptionMembrane1952">
-<p>Hodgkin, A. L., and A. F. Huxley. 1952. “A Quantitative Description of Membrane Current and Its Application to Conduction and Excitation in Nerve.” <em>J Physiol</em> 117 (4): 500–544. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/</a>.</p>
-</div>
-<div id="ref-muskIntegratedBrainmachineInterface2019">
-<p>Musk, Elon, and Neuralink. 2019. “An Integrated Brain-Machine Interface Platform with Thousands of Channels.” <em>bioRxiv</em>, August, 703801. <a href="https://doi.org/10.1101/703801">https://doi.org/10.1101/703801</a>.</p>
+<div id="ref-gilbertEffectsClosedLoopBrain2018">
+<p>Gilbert, Frederic, Terence O’brien, and Mark Cook. 2018. “The Effects of Closed-Loop Brain Implants on Autonomy and Deliberation: What Are the Risks of Being Kept in the Loop?” <em>Cambridge Quarterly of Healthcare Ethics</em> 27 (2): 316–25. <a href="https://doi.org/10.1017/S0963180117000640">https://doi.org/10.1017/S0963180117000640</a>.</p>
 </div>
 <div id="ref-sobotImplantableTechnologyHistory2018">
 <p>Sobot, Robert. 2018. “Implantable Technology : History, Controversies, and Social Implications [Commentary].” <em>IEEE Technology and Society Magazine</em> 37 (4): 35–45. <a href="https://doi.org/10.1109/MTS.2018.2880167">https://doi.org/10.1109/MTS.2018.2880167</a>.</p>
-</div>
-<div id="ref-thomasCriticalReviewResponsive2015">
-<p>Thomas, George P, and Barbara C Jobst. 2015. “Critical Review of the Responsive Neurostimulator System for Epilepsy.” <em>Med Devices (Auckl)</em> 8 (October): 405–11. <a href="https://doi.org/10.2147/MDER.S62853">https://doi.org/10.2147/MDER.S62853</a>.</p>
 </div>
 </div>
 </section></section>
